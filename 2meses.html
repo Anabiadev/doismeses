@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 meses de namoro!</title>
+    <link rel="shortcut icon" href="favicon-32x32.png" type="favicon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <img src="nós.jpg" alt="nossa foto">
+
+    <p>nós estamos juntas há... <br> </p>
+
+    <div class="contador" id="tempo"></div>
+      <script>
+        let dataNamoro = new Date("2025-10-18");
+
+        function calcularTempo() {
+            let hoje = new Date();
+
+            let anos = hoje.getFullYear() - dataNamoro.getFullYear();
+            let meses = hoje.getMonth() - dataNamoro.getMonth();
+            let dias = hoje.getDate() - dataNamoro.getDate();
+
+            // Ajustar casos onde o dia atual é menor que o dia do namoro
+            if (dias < 0) {
+                meses--;
+                let ultimoMes = new Date(hoje.getFullYear(), hoje.getMonth(), 0);
+                dias += ultimoMes.getDate();
+            }
+
+            // Ajustar casos onde o mês fica negativo
+            if (meses < 0) {
+                anos--;
+                meses += 12;
+            }
+
+            // Aqui mostramos **somente meses e dias**
+            document.getElementById("tempo").textContent = 
+                `${meses + anos * 12} meses e ${dias} dias🤍`;
+        }
+
+        calcularTempo();
+    </script>
+
+    <p>nesse meio tempo, você fez da minha vida mais feliz.. <br>
+    e fez eu fazer muitas cartinhas pra você.</p>
+    <img src="cartinhas.jpg" alt="cartinhas">
+
+    <p>mas, acima de tudo, a oportunidade de dar todo meu amor para alguém muito especial, <br>
+    que eu amo demais, que é maravilhosa, perfeita, amor da minha vida, incrível e especial. <br>
+obrigada por me fazer sentir esse sentimento novamente, eu estou muito feliz de estar namorando você!🤍</p>
+
+<img src="gif.gif" alt="gif">
+
+
+</body>
+</html>
